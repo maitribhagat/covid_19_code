@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="categoryData"
+            type="com.example.e_commerce.ui.main.dashboard.model.Category" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="@dimen/margin_12"
+    xmlns:fresco="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_8"
+            android:paddingBottom="@dimen/margin_8"
+            android:paddingEnd="@dimen/margin_8"
+            android:textColor="@color/color_black"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_20"
+            tools:text="@string/app_name"
+            android:text="@{categoryData.title}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.facebook.drawee.view.SimpleDraweeView
+          android:id="@+id/dashboard_menu_image"
+          android:layout_width="0dp"
+          android:layout_height="0dp"
+          fresco:progressBarImageScaleType="centerInside"
+          app:layout_constraintDimensionRatio="H,14:9"
+          app:layout_constraintTop_toBottomOf="@+id/title"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintBottom_toTopOf="@+id/dashboard_menu_title"
+          app:layout_constraintVertical_chainStyle="packed"
+          fresco:placeholderImage="@drawable/ic_drawer_profile"
+          fresco:roundAsCircle="true"
+        app:categoryloadImage="@{categoryData.image}"
+          fresco:roundingBorderColor="@color/colorAccent"
+      />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_8"
+            android:paddingBottom="@dimen/margin_8"
+            android:paddingEnd="@dimen/margin_8"
+            android:layout_marginStart="@dimen/margin__16"
+            android:text="@{categoryData.description}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dashboard_menu_image" />
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/color_grey"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/dashboard_fragment">
+
+    <fragment
+        android:id="@+id/dashboard_fragment"
+        android:name="com.example.e_commerce.ui.main.dashboard.ui.MainFragment"
+        android:label="@string/dashboard"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_dashboard_fragment_to_menudetailsFragment"
+            app:destination="@id/menudetailsFragment" />
+        <action
+            android:id="@+id/action_dashboard_fragment_to_wishListFragment"
+            app:destination="@id/wishListFragment" />
+        <action
+            android:id="@+id/action_dashboard_fragment_to_seeOnMapFragment"
+            app:destination="@+id/seeOnMapFragment" />
+        <action
+            android:id="@+id/action_dashboard_fragment_to_faqFragment"
+            app:destination="@+id/faqFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menudetailsFragment"
+        android:name="com.example.e_commerce.ui.main.productdetails.MenuDetailsFragment"
+        android:label="MenuDetailsFragment" >
+        <argument
+            android:name="position"
+            app:argType="string"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/wishListFragment"
+        android:name="com.example.e_commerce.ui.main.wishlist.WishListFragment"
+        android:label="WishListFragment" />
+    <fragment android:id="@+id/seeOnMapFragment"
+    android:name="com.example.e_commerce.ui.main.covid.SeeOnMapFragment"
+    android:label="WishListFragment">
+
+    </fragment>
+    <fragment android:id="@+id/faqFragment"
+        android:name="com.example.e_commerce.ui.main.covid.FaqFragment"
+        android:label="FaqFragment"/>
+
+</navigation>

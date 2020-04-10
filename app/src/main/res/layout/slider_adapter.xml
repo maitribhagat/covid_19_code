@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <import type="android.view.View" />
+
+    <variable
+        name="demomodel"
+        type="com.example.e_commerce.ui.main.dashboard.model.SliderImagesModel" />
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/info_image"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:srcCompat="@drawable/slider_1"
+        app:loadImage="@{demomodel.img_image}"
+        app:layout_constraintDimensionRatio="10:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_title"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="@{demomodel.img_name}"
+        android:background="@color/colorAccent"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/info_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="info_title_one" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{demomodel.img_desc}"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/info_image"
+        tools:text="info_subtitle_one" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

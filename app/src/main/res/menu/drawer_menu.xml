@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:id="@+id/nav_menu"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/orders_fragment"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="Orders"
+            android:visible="false"
+            />
+        <item
+            android:id="@+id/seeOnMapFragment"
+            android:icon="@drawable/ic_globe"
+            android:title="See On Map" />
+
+
+        <!--<item
+            android:id="@+id/subscriptionFragment"
+            android:icon="@drawable/ic_subscription_new"
+            android:title="@string/subscription" />-->
+
+        <item
+            android:id="@+id/faqFragment"
+            android:icon="@drawable/ic_information"
+            android:title="FAQ" />
+
+        <item
+            android:id="@+id/notificationOnOff"
+            android:icon="@drawable/ic_bell"
+            android:title="Notification"
+            app:actionLayout="@layout/notifi_on_off" />/>
+
+        <item
+            android:id="@+id/wishListFragment"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="Share"
+            android:visible="false"/>
+        <item
+            android:id="@+id/shareFragment"
+            android:icon="@drawable/ic_share"
+            android:title="Share" />
+
+
+    </group>
+</menu>
